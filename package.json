@@ -1,0 +1,19 @@
+{
+  "name": "express-api-demo",
+  "version": "1.0.0",
+  "description": "A demo Express API with static website",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-api-demo": "file:"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
