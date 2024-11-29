@@ -1,0 +1,46 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Bluetooth Headphones",
+      "description": "Noise-canceling over-ear headphones with up to 40 hours of battery life and rich, immersive sound. Available in multiple colors.",
+      "image": "images/headphones.jpg",
+      "price": "50"
+    },
+    {
+      "id": 2,
+      "name": "Smart Home Speaker",
+      "description": "Voice-controlled smart speaker with high-quality sound and built-in smart assistant for hands-free control of your home.",
+      "image": "images/speaker.jpg",
+      "price": "100"
+  
+    },
+    {
+      "id": 3,
+      "name": "Eco-Friendly Water Bottle",
+      "description": "BPA-free, stainless steel water bottle with double-wall insulation, keeping your beverages cold for up to 24 hours and hot for up to 12 hours.",
+      "image": "images/bottle.jpg",
+      "price": "20"
+    },
+    {
+      "id": 4,  
+      "name": "Portable Charger 10,000mAh",
+      "description": "Compact and lightweight power bank that can charge two devices simultaneously with fast-charging technology.",
+      "image": "images/charger.jpg",
+      "price": "60"
+    },
+    {
+      "id": 5,
+      "name": "Adjustable Laptop Stand",
+      "description": "Ergonomic, foldable laptop stand with adjustable height and angle, perfect for improving posture and comfort while working.",
+      "image": "images/laptop.jpg",
+      "price": "30"
+    },
+    {
+      "id": 6,
+      "name": "Smart LED Light Bulb",
+      "description": "Color-changing LED bulb that connects to your Wi-Fi network. Control brightness and color with an app or voice commands.",
+      "image": "images/bulb.jpg",
+      "price": "25"
+    }
+  ]
+  
