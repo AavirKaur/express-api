@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header, nav, footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+    nav a {
+      margin: 0 10px;
+      color: #ffcc00;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    /* Notification Bar */
+    #notification-bar {
+      background: #ffcc00;
+      padding: 10px;
+      text-align: center;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Carousel Styles */
+    #carousel {
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+    .carousel-item {
+      display: none;
+      text-align: center;
+    }
+    .carousel-item img {
+      width: 100%;
+      max-width: 800px;
+    }
+    #carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    #prev {
+      left: 10px;
+    }
+    #next {
+      right: 10px;
+    }
+
+    /* Filter and Product Listing */
+    main {
+      padding: 20px;
+    }
+    #filterSection {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    #filters label, #filters select, #filters button {
+      margin-right: 10px;
+    }
+    #product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    #product-container div {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Shopping Cart */
+    #cart {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* FAQ Section */
+    #faq {
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .faq-item {
+      margin-bottom: 10px;
+    }
+    .faq-item h3 {
+      cursor: pointer;
+      color: #007BFF;
+    }
+    .faq-item h3:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Notification Bar -->
+  <div id="notification-bar" style="display:none;">
+    New Product Alert! Check out our latest arrivals.
+  </div>
+
+  <header>
+    <h1>Our Products</h1>
+    <p>Explore our range of innovative products designed with you in mind.</p>
+    <button id="theme-toggle">Toggle Dark Mode</button>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="demo.html">Demo</a>
+  </nav>
+
+  <!-- Carousel/Slider -->
+  <section id="carousel">
+    <div class="carousel-item"><img src="images/headphones.jpg" alt="Wireless Bluetooth Headphones"></div>
+    <div class="carousel-item"><img src="images/speaker.jpg" alt="Smart LED Light Bulb"></div>
+    <div class="carousel-item"><img src="images/bottle.jpg" alt="Eco-Friendly Water Bottle"></div>
+    <button id="prev">❮</button>
+    <button id="next">❯</button>
+  </section>
+
+  <!-- Filter and Product Listing -->
+  <main>
+    <section id="filterSection">
+      <h2>Filter Products</h2>
+      <div id="filters">
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="">All Categories</option>
+          <option value="audio">Audio</option>
+          <option value="smartHome">Smart Home</option>
+          <option value="lifestyle">Lifestyle</option>
+        </select>
+    
+        <label for="priceRange">Price Range:</label>
+        <select id="priceRange" name="priceRange">
+          <option value="">All Prices</option>
+          <option value="low">Below $50</option>
+          <option value="medium">$50 - $100</option>
+          <option value="high">Above $100</option>
+        </select>
+    
+        <button id="applyFilters">Apply Filters</button>
+      </div>
+    </section>
+    
+    <section id="product-container"></section>
+  </main>
+
+  <!-- Shopping Cart -->
+  <section id="cart"></section>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <h2>FAQs</h2>
+    <div class="faq-item">
+      <h3>What is your return policy?</h3>
+      <p style="display:none;">You can return products within 30 days.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I track my order?</h3>
+      <p style="display:none;">You will receive a tracking code after the order ships.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Product Showcase. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Notification Bar
+setTimeout(() => {
+  document.getElementById('notification-bar').style.display = 'block';
+}, 5000);
+
+// Dark Mode Toggle
+const toggle = document.getElementById('theme-toggle');
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+});
+if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
+
+// Carousel
+const items = document.querySelectorAll('.carousel-item');
+let currentItem = 0;
+
+document.getElementById('next').addEventListener('click', () => {
+  items[currentItem].style.display = 'none';
+  currentItem = (currentItem + 1) % items.length;
+  items[currentItem].style.display = 'block';
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+  items[currentItem].style.display = 'none';
+  currentItem = (currentItem - 1 + items.length) % items.length;
+  items[currentItem].style.display = 'block';
+});
+
+items.forEach((item, index) => item.style.display = index === 0 ? 'block' : 'none');
+
+// Fetch Product Data from API
+const container = document.getElementById('product-container');
+let products = [];
+
+fetch('/api/items')
+  .then(response => response.json())
+  .then(data => {
+    products = data;
+    renderProducts(products);
+  });
+
+function renderProducts(list) {
+  container.innerHTML = list.map(p => `
+    <div>
+      <h2>${p.name}</h2>
+      <p>Category: ${p.category}</p>
+      <p>Price: $${p.price}</p>
+    </div>
+  `).join('');
+}
+
+// Filter Products
+document.getElementById('applyFilters').addEventListener('click', () => {
+  const category = document.getElementById('category').value;
+  const priceRange = document.getElementById('priceRange').value;
+
+  let filteredProducts = products;
+
+  if (category) filteredProducts = filteredProducts.filter(p => p.category.toLowerCase() === category.toLowerCase());
+  if (priceRange) {
+    filteredProducts = filteredProducts.filter(p => {
+      if (priceRange === 'low') return p.price < 50;
+      if (priceRange === 'medium') return p.price >= 50 && p.price <= 100;
+      if (priceRange === 'high') return p.price > 100;
+    });
+  }
+
+  renderProducts(filteredProducts);
+});
+
+// FAQ Toggle
+const faqItems = document.querySelectorAll('.faq-item h3');
+faqItems.forEach(h3 => {
+  h3.addEventListener('click', () => {
+    const p = h3.nextElementSibling;
+    p.style.display = p.style.display === 'block' ? 'none' : 'block';
+  });
+});
+
+  </script>
+</body>
+</html>
